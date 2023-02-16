@@ -1,15 +1,10 @@
 spring:
-  kafka:
-    producer:
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      bootstrap-servers: 127.0.0.1:9092
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
   data:
     mongodb:
-      uri: mongodb://localhost:27017/test
+      uri: mongodb://localhost:27017/testdb
   main:
     allow-bean-definition-overriding: true
 auto:
