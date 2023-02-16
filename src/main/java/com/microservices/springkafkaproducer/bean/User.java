@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Document("user1")
 @Data
 @Builder
-//j'ai ajouté cette ligne
+
 public class User implements Serializable {
 
     @Id

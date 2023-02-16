@@ -1,9 +1,7 @@
 spring:
   kafka:
     producer:
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      bootstrap-servers: 127.0.0.1:9092
+      bootstrap-servers: kafka:29092
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
@@ -18,7 +16,7 @@ auto:
       enable: 'true'
 order:
   topic:
-    name: order-topic
+    name: ORDER-TOPIC
 server:
   port: '9090'
 
