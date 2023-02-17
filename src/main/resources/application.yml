@@ -5,14 +5,14 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   kafka:
-    bootstrap-servers: localhost:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bootstrap-servers: kafka:9092
 
   data:
     mongodb:
-      uri: mongodb://localhost:27017/testdb
+      uri: mongodb://mongo:27017/testdb
       database: testdb
 server:
   port: 9090
