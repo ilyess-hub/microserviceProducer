@@ -5,6 +5,7 @@ import java.util.List;
 
 public interface InterfaceGeneric<T> {
 
+
     T create(T data);
     List<T> getAll();
     T findById(String id);

@@ -1,21 +1,18 @@
 spring:
+  application:
+    name: my-spring-boot-app
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
   data:
     mongodb:
       uri: mongodb://localhost:27017/testdb
-  main:
-    allow-bean-definition-overriding: true
-auto:
-  create:
-    topics:
-      enable: 'true'
-order:
-  topic:
-    name: order-topic
+      database: testdb
 server:
-  port: '9090'
-
-
-
+  port: 9090
