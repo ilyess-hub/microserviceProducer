@@ -9,6 +9,7 @@ import com.microservices.springkafkaproducer.repo.OrderCRUD;
 import com.microservices.springkafkaproducer.serviceinterface.InterfaceGeneric;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -22,7 +23,8 @@ public class OrderService implements InterfaceGeneric<Order> {
     @Autowired
     private OrderCRUD orderCRUD;
 
-    private Enum topicName=Enum.ORDER_TOPIC;
+    private Enum topicName = Enum.ORDER_TOPIC;
+
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
@@ -41,7 +43,7 @@ public class OrderService implements InterfaceGeneric<Order> {
             e.printStackTrace();
         }
         kafkaTemplate.send(topicName.toString(),message);
-        log.info("send message to Topic");
+        log.info("send message order to Topic");
         return order;
     }
 

@@ -54,8 +54,7 @@ public class UserService implements InterfaceGeneric<User> {
 
     @Override
     public List<User> getAll() {
-        List<User> users= (List<User>) userCRUD.findAll();
-        return users;
+        return userCRUD.findAll();
     }
 
 
